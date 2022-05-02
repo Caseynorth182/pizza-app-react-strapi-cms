@@ -1,14 +1,23 @@
 import React from 'react'
+import classNames from 'classnames'
 
-const Button = (props) => {
-    console.log(props);
-    const buttonClass = props.outline ? 'button button--outline' : 'button'
+const Button = ({ outline, children, className }) => {
+
+
+    const alert2 = () => {
+        alert(children)
+    }
     return (
-        <>
-            <button className={buttonClass}>
-                {props.children}
-            </button>
-        </>
+
+        <button
+            onClick={() => alert2()}
+            className={classNames('button', className, {
+                'button--outline': outline,
+
+            })}>
+            {children}
+        </button>
+
     )
 }
 
