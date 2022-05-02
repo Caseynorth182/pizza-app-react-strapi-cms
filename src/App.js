@@ -1,6 +1,12 @@
 import { Header, Category, Button } from './components'
 
-
+const category = [
+  'Мясные',
+  'Вегетарианская',
+  'Гриль',
+  'Острые',
+  'Закрытые',
+]
 function App() {
   return (
     <div className="wrapper">
@@ -14,7 +20,7 @@ function App() {
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <Category />
+            <Category onClickFoo={(cat_name) => console.log(cat_name)} items={category} />
             <div className="sort">
               <div className="sort__label">
                 <svg
