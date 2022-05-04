@@ -1,13 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Sort = ({ sortStyle }) => {
     const [modal, setModal] = useState(false);
     const [activeSort, setActive] = useState('популярности');
+    const sortRef = useRef()
 
-    console.log('1');
     useEffect(() => {
-        console.log('rendered');
-    }, [activeSort])
+        document.body.addEventListener('click', handleOutsideClick)
+    }, [])
+
+    const handleOutsideClick = (e) => {
+        /* console.log(sortRef.current);
+        console.log(e.path[0]); */
+        /* console.log(e.path.includes()); */
+        if (!e.path.includes(sortRef.current)) {
+            setModal(false)
+        }
+
+    }
 
     const setActiveSort = (item) => {
         setActive(item);
@@ -16,7 +26,9 @@ const Sort = ({ sortStyle }) => {
 
 
     return (
-        <div className="sort">
+        <div
+            ref={sortRef}
+            className="sort">
             <div className="sort__label">
                 <svg
                     width="10"
