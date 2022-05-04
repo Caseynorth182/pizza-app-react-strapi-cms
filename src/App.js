@@ -7,6 +7,13 @@ const category = [
   'Острые',
   'Закрытые',
 ]
+
+const sortStyle = [
+  'цене',
+  'алфавиту'
+]
+
+
 function App() {
   return (
     <div className="wrapper">
@@ -21,7 +28,7 @@ function App() {
         <div className="container">
           <div className="content__top">
             <Category onClickFoo={(cat_name) => console.log(cat_name)} items={category} />
-            <Sort />
+            <Sort sortStyle={sortStyle} />
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
