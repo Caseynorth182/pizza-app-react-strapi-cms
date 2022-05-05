@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Header } from './components'
 import { Cart, Error404, Home } from './pages/'
 import axios from 'axios';
+import Test from './pages/Test';
 
 
 
@@ -29,7 +30,8 @@ function App() {
       <div className="content">
         <Routes>
           <Route index path='/' element={<Home pizzas={pizzas} />} />
-          <Route path='cart' element={<Cart />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/test' element={<Test />} />
           <Route path='*' element={<Error404 />} />
         </Routes>
       </div>
