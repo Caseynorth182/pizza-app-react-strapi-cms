@@ -437,6 +437,11 @@ a {
     cursor: auto
 }
 
+.pizza-block__selector ul li.disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
 .pizza-block__bottom {
     display: -webkit-box;
     display: -ms-flexbox;

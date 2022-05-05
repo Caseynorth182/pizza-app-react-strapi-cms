@@ -2,7 +2,7 @@ import React from 'react'
 
 const Error404 = () => {
     return (
-        <div>УПС</div>
+        <div><h1 style={{ display: 'flex', justifyContent: 'center' }}>УПС</h1></div>
     )
 }
 
