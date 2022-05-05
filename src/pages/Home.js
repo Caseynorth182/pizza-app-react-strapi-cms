@@ -27,7 +27,7 @@ const Home = ({ pizzas }) => {
                     pizzas &&
                     pizzas.map((pizza, i) => {
                         return (
-                            <PizzaBlock key={pizza.id} {...pizza} />
+                            <PizzaBlock key={pizza.id}  {...pizza} />
                         )
                     })
                 }

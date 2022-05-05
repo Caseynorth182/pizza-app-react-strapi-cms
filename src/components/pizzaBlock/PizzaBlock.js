@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import classNames from 'classnames'
+import classNames from 'classnames';
+import PropTypes from 'prop-types'; // ES6
 
 const PizzaBlock = ({ imageUrl, name, types, sizes }) => {
     const typesNmaes = ['тонкое', 'традиционное'];
@@ -84,5 +85,22 @@ const PizzaBlock = ({ imageUrl, name, types, sizes }) => {
         </div>
     )
 }
+
+PizzaBlock.propTypes = {
+    name: PropTypes.string,
+    id: PropTypes.number,
+    imageUrl: PropTypes.string,
+    types: PropTypes.arrayOf(PropTypes.number),
+    sizes: PropTypes.arrayOf(PropTypes.number),
+    price: PropTypes.number,
+    category: PropTypes.number,
+    rating: PropTypes.number,
+}
+
+PizzaBlock.defaultProps = {
+    name: 'pizza',
+    imageUrl: 'http://cdn30.us1.fansshare.com/image/pizza/blank-pizza-template-clipart-1067792243.jpg',
+
+};
 
 export default PizzaBlock
