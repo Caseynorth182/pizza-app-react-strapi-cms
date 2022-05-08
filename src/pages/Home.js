@@ -10,8 +10,18 @@ const category = [
 ]
 
 const sortStyle = [
-    'цене',
-    'алфавиту'
+    {
+        name: 'Популярности',
+        type: 'popular'
+    },
+    {
+        name: 'цене',
+        type: 'price'
+    },
+    {
+        name: 'Алфавит',
+        type: 'alphabet'
+    },
 ]
 
 const Home = ({ pizzas }) => {

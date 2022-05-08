@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const Sort = ({ sortStyle }) => {
     const [modal, setModal] = useState(false);
-    const [activeSort, setActive] = useState('популярности');
+    const [activeSort, setActive] = useState(sortStyle[0].name);
     const sortRef = useRef()
 
     useEffect(() => {
@@ -48,20 +48,18 @@ const Sort = ({ sortStyle }) => {
             {modal &&
                 <div className="sort__popup" >
                     <ul>
-                        <li onClick={() => setActiveSort('популярности')}
-                            className={activeSort == null ? 'active' : ''}
-                        >популярности</li>
+
 
                         {
                             sortStyle &&
                             sortStyle.map((item, i) => {
                                 return (
                                     <li
-                                        onClick={() => setActiveSort(item)}
+                                        onClick={() => setActiveSort(item.name)}
                                         className={activeSort === i ? 'active' : ''}
-                                        key={`${item}_${i}`}
+                                        key={`${item.type}_${i}`}
                                     >
-                                        {item}
+                                        {item.name}
                                     </li>
                                 )
                             })

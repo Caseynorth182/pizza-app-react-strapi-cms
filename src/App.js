@@ -4,8 +4,11 @@ import { Header } from './components'
 import { Cart, Error404, Home } from './pages/'
 import axios from 'axios';
 
+import store from './redux/store';
 
-
+console.log(store.getState());
+store.subscribe(() => console.log(store.getState()))
+store.dispatch({ type: 'counter/incremented' })
 
 function App() {
   const [pizzas, setPizzas] = useState([])
